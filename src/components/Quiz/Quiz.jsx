@@ -52,7 +52,7 @@ export default function Quiz() {
     steps = ["requestType", "linerTexture", "poolSize", "contact"];
   } else {
     // polymer_panels_pool or unselected
-    steps = ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
+    steps = ["requestType", "linerTexture", "poolSize", "location", "equipment", "additional", "budget", "contact"];
   }
 
   const currentStep = steps[currentStepIndex] || steps[0];

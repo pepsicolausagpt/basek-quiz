@@ -107,7 +107,7 @@ export const budgetOptions = [
 export const linerTextureOptions = [
   { value: "electric", label: "Electric", img: "liner-electric.png" },
   { value: "marble", label: "Marble", img: "liner-marble.png" },
-  { value: "butterfly", label: "Batterfly", img: "liner-butterfly.png" },
+  { value: "butterfly", label: "Butterfly", img: "liner-butterfly.png" },
   { value: "sky", label: "Sky", img: "liner-sky.png" },
   { value: "pure_blue", label: "Pure Blue", img: "liner-pure-blue.png" },
   { value: "granite", label: "Granite", img: "liner-granite.png" },
