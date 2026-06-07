@@ -2,6 +2,7 @@ import { useState } from "react";
 import { buildLeadData } from "../../utils/buildLeadData";
 import { isStepValid, validateStep } from "../../utils/validation";
 import { submitLead } from "../../utils/submitLead";
+import RequestTypeStep from "./RequestTypeStep";
 import PoolSizeStep from "./PoolSizeStep";
 import LocationStep from "./LocationStep";
 import EquipmentStep from "./EquipmentStep";
@@ -12,6 +13,7 @@ import ProgressBar from "./ProgressBar";
 import SuccessScreen from "./SuccessScreen";
 
 const createInitialFormData = () => ({
+  requestType: "",
   poolWidth: "",
   poolLength: "",
   linerType: "",
@@ -32,7 +34,7 @@ const createInitialFormData = () => ({
   email: "",
 });
 
-const steps = ["poolSize", "location", "equipment", "additional", "budget", "contact"];
+const steps = ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
 
 export default function Quiz() {
   const [screen, setScreen] = useState("quiz");
@@ -102,6 +104,10 @@ export default function Quiz() {
   };
 
   const renderStep = () => {
+    if (currentStep === "requestType") {
+      return <RequestTypeStep formData={formData} onFieldChange={updateField} error={errors.requestType} />;
+    }
+
     if (currentStep === "poolSize") {
       return <PoolSizeStep formData={formData} onFieldChange={updateField} errors={errors} />;
     }

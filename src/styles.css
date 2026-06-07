@@ -898,6 +898,10 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.choice-list--vertical {
+  grid-template-columns: 1fr;
+}
+
 .step--equipment .choice-list,
 .step--additional .choice-list,
 .step--budget .choice-list,

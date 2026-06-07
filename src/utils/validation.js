@@ -9,6 +9,10 @@ export function validateStep(stepId, formData) {
     }
   };
 
+  if (stepId === "requestType") {
+    requireField("requestType", "Выберите один из вариантов");
+  }
+
   if (stepId === "poolSize") {
     requireField("poolWidth", "Выберите ширину бассейна");
     requireField("poolLength", "Выберите длину бассейна");

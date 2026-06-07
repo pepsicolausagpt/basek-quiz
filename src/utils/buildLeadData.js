@@ -11,6 +11,7 @@ export function buildLeadData(formData) {
 
   return {
     source: LEAD_SOURCE,
+    requestType: formData.requestType,
     poolWidth: formData.poolWidth,
     poolLength: formData.poolLength,
     linerType: formData.linerType,

@@ -1,3 +1,9 @@
+export const requestTypeOptions = [
+  { value: "liner_only", label: "Только покупка пленки ПВХ" },
+  { value: "liner_installation", label: "Покупка пленки ПВХ с монтажными работами" },
+  { value: "polymer_panels_pool", label: "Возведение бассейна на основе конструктива из полимерных панелей" },
+];
+
 export const poolWidthOptions = ["3", "3.5", "4", "4.5", "5"];
 export const poolLengthOptions = ["6", "7", "8", "9", "10", "12"];
 
@@ -100,6 +106,7 @@ export const budgetOptions = [
 
 export const optionLabels = Object.fromEntries(
   [
+    ...requestTypeOptions,
     ...locationOptions,
     ...equipmentSolutionOptions,
     ...equipmentItemOptions,

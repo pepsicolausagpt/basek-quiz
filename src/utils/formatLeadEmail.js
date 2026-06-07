@@ -29,6 +29,7 @@ export function formatLeadEmail(leadData) {
     `Город поставки: ${formatValue(contact.deliveryCity)}`,
     `Телефон: ${formatValue(contact.phone)}`,
     `Email: ${formatValue(contact.email)}`,
+    `Вариант запроса: ${formatValue(leadData.requestType)}`,
     "",
     "Параметры бассейна:",
     `Ширина: ${formatValue(leadData.poolWidth)} м`,
