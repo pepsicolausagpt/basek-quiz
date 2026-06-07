@@ -6,7 +6,7 @@ import {
 
 export default function PoolSizeStep({ formData, onFieldChange, errors }) {
   const isPolymer = formData.requestType === "polymer_panels_pool";
-  const hasLinerStep = formData.requestType === "liner_only";
+  const hasLinerStep = formData.requestType === "liner_only" || formData.requestType === "liner_installation";
 
   return (
     <section className="step step--custom-size">

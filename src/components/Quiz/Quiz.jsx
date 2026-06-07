@@ -48,6 +48,8 @@ export default function Quiz() {
   let steps = ["requestType"];
   if (formData.requestType === "liner_only") {
     steps = ["requestType", "linerTexture", "poolSize", "contact"];
+  } else if (formData.requestType === "liner_installation") {
+    steps = ["requestType", "linerTexture", "poolSize", "contact"];
   } else {
     // polymer_panels_pool or unselected
     steps = ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
