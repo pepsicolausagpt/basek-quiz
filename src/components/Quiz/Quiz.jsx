@@ -16,6 +16,7 @@ const createInitialFormData = () => ({
   requestType: "",
   poolWidth: "",
   poolLength: "",
+  poolDepth: "",
   linerType: "",
   location: "",
   equipmentSolution: "",
