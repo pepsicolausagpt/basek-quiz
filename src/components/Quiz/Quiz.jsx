@@ -47,7 +47,7 @@ export default function Quiz() {
 
   const isFirstTwo = formData.requestType === "liner_only" || formData.requestType === "liner_installation";
   const steps = isFirstTwo
-    ? ["requestType", "poolSize", "linerTexture", "location", "equipment", "additional", "budget", "contact"]
+    ? ["requestType", "linerTexture", "poolSize", "location", "equipment", "additional", "budget", "contact"]
     : ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
 
   const currentStep = steps[currentStepIndex] || steps[0];
