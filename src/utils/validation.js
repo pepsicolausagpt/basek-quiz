@@ -19,6 +19,7 @@ export function validateStep(stepId, formData) {
     if (isPolymer) {
       requireField("poolWidth", "Выберите ширину бассейна");
       requireField("poolLength", "Выберите длину бассейна");
+      requireField("linerType", "Выберите тип пленки");
     } else {
       requireField("poolWidth", "Укажите ширину бассейна");
       requireField("poolLength", "Укажите длину бассейна");
@@ -43,7 +44,6 @@ export function validateStep(stepId, formData) {
         }
       }
     }
-    requireField("linerType", "Выберите тип пленки");
   }
 
   if (stepId === "linerTexture") {

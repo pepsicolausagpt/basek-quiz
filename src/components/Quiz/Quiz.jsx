@@ -45,10 +45,15 @@ export default function Quiz() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const isFirstTwo = formData.requestType === "liner_only" || formData.requestType === "liner_installation";
-  const steps = isFirstTwo
-    ? ["requestType", "linerTexture", "poolSize", "location", "equipment", "additional", "budget", "contact"]
-    : ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
+  let steps = ["requestType"];
+  if (formData.requestType === "liner_only") {
+    steps = ["requestType", "linerTexture", "poolSize", "contact"];
+  } else if (formData.requestType === "liner_installation") {
+    steps = ["requestType", "linerTexture", "poolSize", "location", "equipment", "additional", "budget", "contact"];
+  } else {
+    // polymer_panels_pool or unselected (default to the full polymer flow/standard flow)
+    steps = ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
+  }
 
   const currentStep = steps[currentStepIndex] || steps[0];
   const errors = showErrors ? validateStep(currentStep, formData) : {};
