@@ -36,6 +36,7 @@ export function formatLeadEmail(leadData) {
     `Длина: ${formatValue(leadData.poolLength)} м`,
     ...(leadData.poolDepth ? [`Глубина: ${formatValue(leadData.poolDepth)} м`] : []),
     `Тип пленки: ${formatValue(leadData.linerType)}`,
+    ...(leadData.linerTexture ? [`Цвет/фактура пленки: ${formatValue(leadData.linerTexture)}`] : []),
     "",
     "Местоположение:",
     `Где будет расположен бассейн: ${formatValue(leadData.location)}`,

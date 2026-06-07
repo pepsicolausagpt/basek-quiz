@@ -104,6 +104,18 @@ export const budgetOptions = [
    Словарь value → label для email
    ═══════════════════════════════════════ */
 
+export const linerTextureOptions = [
+  { value: "electric", label: "Electric", img: "liner-electric.png" },
+  { value: "marble", label: "Marble", img: "liner-marble.png" },
+  { value: "butterfly", label: "Batterfly", img: "liner-butterfly.png" },
+  { value: "sky", label: "Sky", img: "liner-sky.png" },
+  { value: "pure_blue", label: "Pure Blue", img: "liner-pure-blue.png" },
+  { value: "granite", label: "Granite", img: "liner-granite.png" },
+  { value: "mosaic", label: "Mosaik", img: "liner-mosaic.png" },
+  { value: "mosaic_type_1", label: "Mosaik type 1", img: "liner-mosaic-type-1.png" },
+  { value: "sunny", label: "Sunny", img: "liner-sunny.png" },
+];
+
 export const optionLabels = Object.fromEntries(
   [
     ...requestTypeOptions,
@@ -118,6 +130,7 @@ export const optionLabels = Object.fromEntries(
     ...implementationTimeOptions,
     ...budgetOptions,
     ...linerTypeOptions,
+    ...linerTextureOptions,
   ].map((option) => [option.value, option.label]),
 );
 

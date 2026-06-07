@@ -16,6 +16,7 @@ export function buildLeadData(formData) {
     poolLength: formData.poolLength,
     poolDepth: formData.poolDepth,
     linerType: formData.linerType,
+    linerTexture: formData.linerTexture,
     location: formData.location,
     equipmentSolution: formData.equipmentSolution,
     equipmentItems: formData.equipmentItems,

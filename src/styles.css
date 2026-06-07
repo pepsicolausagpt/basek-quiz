@@ -1582,3 +1582,119 @@ h3 {
   .start-benefits p { font-size: 0.85rem; }
 }
 
+/* Liner Selection Step Styles */
+.liner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.liner-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(14, 26, 47, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 8px 12px 8px;
+  position: relative;
+  box-shadow: 0 10px 24px rgba(20, 28, 42, 0.035);
+  font-family: inherit;
+  outline: none;
+}
+
+.liner-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 26, 47, 0.08);
+  border-color: rgba(7, 155, 179, 0.3);
+}
+
+.liner-card.active {
+  border-color: var(--aqua);
+  background: rgba(242, 252, 253, 0.9);
+  box-shadow:
+    inset 0 0 0 1px rgba(7, 155, 179, 0.14),
+    0 8px 20px rgba(7, 155, 179, 0.075);
+}
+
+.liner-image-wrapper {
+  width: 100%;
+  height: 76px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.liner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.liner-card:hover .liner-image {
+  transform: scale(1.08);
+}
+
+.liner-name {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 620;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.liner-card.active .liner-name {
+  color: var(--aqua-dark);
+  font-weight: 720;
+}
+
+/* 9th item center align layout */
+.liner-card:last-child {
+  grid-column: span 4;
+  max-width: 140px;
+  width: 100%;
+  justify-self: center;
+}
+
+@media (min-width: 761px) {
+  .liner-card:last-child {
+    grid-column: 2 / span 2;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .liner-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .liner-card {
+    padding: 6px 6px 10px 6px;
+    border-radius: 8px;
+  }
+  .liner-card:last-child {
+    grid-column: span 2;
+    max-width: 100%;
+  }
+  .liner-image-wrapper {
+    height: 62px;
+    border-radius: 6px;
+  }
+  .liner-name {
+    margin-top: 6px;
+    font-size: 0.8rem;
+  }
+}
+
+

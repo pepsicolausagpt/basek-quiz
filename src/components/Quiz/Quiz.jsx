@@ -4,6 +4,7 @@ import { isStepValid, validateStep } from "../../utils/validation";
 import { submitLead } from "../../utils/submitLead";
 import RequestTypeStep from "./RequestTypeStep";
 import PoolSizeStep from "./PoolSizeStep";
+import LinerTextureStep from "./LinerTextureStep";
 import LocationStep from "./LocationStep";
 import EquipmentStep from "./EquipmentStep";
 import AdditionalStep from "./AdditionalStep";
@@ -18,6 +19,7 @@ const createInitialFormData = () => ({
   poolLength: "",
   poolDepth: "",
   linerType: "",
+  linerTexture: "",
   location: "",
   equipmentSolution: "",
   equipmentItems: [],
@@ -35,8 +37,6 @@ const createInitialFormData = () => ({
   email: "",
 });
 
-const steps = ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
-
 export default function Quiz() {
   const [screen, setScreen] = useState("quiz");
   const [formData, setFormData] = useState(createInitialFormData);
@@ -44,6 +44,11 @@ export default function Quiz() {
   const [showErrors, setShowErrors] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+
+  const isFirstTwo = formData.requestType === "liner_only" || formData.requestType === "liner_installation";
+  const steps = isFirstTwo
+    ? ["requestType", "poolSize", "linerTexture", "location", "equipment", "additional", "budget", "contact"]
+    : ["requestType", "poolSize", "location", "equipment", "additional", "budget", "contact"];
 
   const currentStep = steps[currentStepIndex] || steps[0];
   const errors = showErrors ? validateStep(currentStep, formData) : {};
@@ -111,6 +116,10 @@ export default function Quiz() {
 
     if (currentStep === "poolSize") {
       return <PoolSizeStep formData={formData} onFieldChange={updateField} errors={errors} />;
+    }
+
+    if (currentStep === "linerTexture") {
+      return <LinerTextureStep formData={formData} onFieldChange={updateField} error={errors.linerTexture} />;
     }
 
     if (currentStep === "location") {

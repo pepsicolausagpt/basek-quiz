@@ -46,6 +46,10 @@ export function validateStep(stepId, formData) {
     requireField("linerType", "Выберите тип пленки");
   }
 
+  if (stepId === "linerTexture") {
+    requireField("linerTexture", "Выберите цвет и фактуру пленки");
+  }
+
   if (stepId === "location") {
     requireField("location", "Выберите местоположение");
   }
