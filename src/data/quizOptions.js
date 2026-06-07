@@ -1,6 +1,5 @@
 export const requestTypeOptions = [
   { value: "liner_only", label: "Только покупка пленки ПВХ" },
-  { value: "liner_installation", label: "Покупка пленки ПВХ с монтажными работами" },
   { value: "polymer_panels_pool", label: "Возведение бассейна на основе конструктива из полимерных панелей" },
 ];
 
