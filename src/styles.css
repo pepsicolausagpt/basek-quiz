@@ -951,11 +951,16 @@ h3 {
   line-height: 1.22;
 }
 
-.step--custom-size .field select {
+.step--custom-size .field select,
+.step--custom-size .field input {
   min-height: 58px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.92);
   font-weight: 680;
+}
+
+.step--custom-size .field input::placeholder {
+  color: rgba(70, 80, 102, 0.42);
 }
 
 .step--custom-size .notice {

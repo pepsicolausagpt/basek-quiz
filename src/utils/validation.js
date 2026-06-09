@@ -14,33 +14,26 @@ export function validateStep(stepId, formData) {
   }
 
   if (stepId === "poolSize") {
-    const isPolymer = formData.requestType === "polymer_panels_pool";
+    requireField("poolWidth", "Укажите ширину бассейна");
+    requireField("poolLength", "Укажите длину бассейна");
+    requireField("poolDepth", "Укажите глубину бассейна");
 
-    if (isPolymer) {
-      requireField("poolWidth", "Выберите ширину бассейна");
-      requireField("poolLength", "Выберите длину бассейна");
-    } else {
-      requireField("poolWidth", "Укажите ширину бассейна");
-      requireField("poolLength", "Укажите длину бассейна");
-      requireField("poolDepth", "Укажите глубину бассейна");
-
-      if (formData.poolWidth) {
-        const val = parseFloat(formData.poolWidth.replace(",", "."));
-        if (isNaN(val) || val <= 0) {
-          errors.poolWidth = "Введите корректное число";
-        }
+    if (formData.poolWidth) {
+      const val = parseFloat(formData.poolWidth.replace(",", "."));
+      if (isNaN(val) || val <= 0) {
+        errors.poolWidth = "Введите корректное число";
       }
-      if (formData.poolLength) {
-        const val = parseFloat(formData.poolLength.replace(",", "."));
-        if (isNaN(val) || val <= 0) {
-          errors.poolLength = "Введите корректное число";
-        }
+    }
+    if (formData.poolLength) {
+      const val = parseFloat(formData.poolLength.replace(",", "."));
+      if (isNaN(val) || val <= 0) {
+        errors.poolLength = "Введите корректное число";
       }
-      if (formData.poolDepth) {
-        const val = parseFloat(formData.poolDepth.replace(",", "."));
-        if (isNaN(val) || val <= 0) {
-          errors.poolDepth = "Введите корректное число";
-        }
+    }
+    if (formData.poolDepth) {
+      const val = parseFloat(formData.poolDepth.replace(",", "."));
+      if (isNaN(val) || val <= 0) {
+        errors.poolDepth = "Введите корректное число";
       }
     }
   }
